@@ -1,5 +1,5 @@
 
-The garbage collection management system is a web-based platform designed to help Green Task 
+This garbage collection management system is a web-based platform designed to help Green Task 
 Force members report the incidents that happen when throwing garbage. Each role has a 
 different level of permission to access the website with limitations. The Webmaster can create 
 accounts for the captains and collecting staff, as well as post articles and add garbage collection 
