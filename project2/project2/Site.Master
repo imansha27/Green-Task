@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="project2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        /* Colors */
+        :root {
+            --primary-color: #165611;
+            --secondary-color: #FFFFFF;
+            --tertiary-color: #6E6E6E;
+          
+        }
+
+        /* Navbar */
+        .navbar {
+           
+
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            color: var( --primary-color);
+              font-size: 30px;
+              font-family: 'Intro', sans-serif;
+              font-weight: 800;
+              text-transform: uppercase;
+               justify-content: flex-start;
+        }
+        .navbar-brand:hover {
+              /* Remove hover effect */
+              color: var(--primary-color);
+              text-decoration: none;
+            }
+
+        .navbar-nav .nav-item .nav-link {
+            color: var( --primary-color);
+            justify-content: flex-end;
+
+
+
+    display: block;
+   /* font-weight: 800;*/
+    font-size: 15px;
+    padding: 10px 10px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0.5px;
+        }
+         .navbar-nav .nav-item .nav-link:hover {
+            color: rgb(25, 21, 22);
+            background: #10b30d;
+         }
+        
+         
+         
+          .nav-link1 {
+            color: var( --primary-color);
+            justify-content: flex-end;
+
+
+
+            display: block;
+           /* font-weight: 800;*/
+            font-size: 15px;
+            padding: 10px 10px;
+            border-radius: 50px;
+            transition: 0.2s;
+            margin: 0.5px;
+            background:#1bcd33;
+        }
+         .nav-link1:hover {
+            color: rgb(25, 21, 22);
+            background: #10b30d;
+         }
+
+
+        /* Footer */
+        footer {
+            background-color: #B2D3C2;
+            color: var(--tertiary-color);
+            padding: 10px 0;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm <%--navbar-dark bg-dark--%>">
+            
+        <div class="container">
+                <a class="navbar-brand" runat="server">Green Task</a>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Default">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Registration">Registration</a></li>
+                        <li class="nav-item"><a class="nav-link1" runat="server" href="~/Login">Login</a></li>
+                    </ul>
+               </div>
+            
+        </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Waste Management Application</p>
+            </footer>
+        </div>
+
+      
+        </form>
+</body>
+</html>  
